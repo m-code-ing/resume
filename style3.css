@@ -80,16 +80,11 @@ ul{
 }
 
 .div_tool_kit_images{
-    height: 150px;
-    /* animation-name:slide-in;
-    animation-duration: 4s;
-    animation-iteration-count: 1; */
+    max-height: 50%;
 }
 
 .toolkit_logos{
-    height: 100%;
-    max-height: 80px;
-    /* max-width: 100%; */
+    max-width: 80%;
 }
 
 .spacer{

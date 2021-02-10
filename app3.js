@@ -16,5 +16,4 @@ function formClicked(e){
 let sherlock = $('.sherlock-wrapper');
 
     sherlock.mouseover(function () {
-        alert('hello');
     });
