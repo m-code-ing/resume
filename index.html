@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="./Libraries/bootstrap-4.0.0-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style3.css">
     <link rel="stylesheet" href="fun.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <!-- Firebase Messaging CDN -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
+    <!-- For an optimal experience using Cloud Messaging, also add the Firebase SDK for Analytics. -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
 </head>
 
 <body class="mt-5">
@@ -65,17 +71,19 @@
             </div>
 
             <!--Starts here -  Front End Tool Kit Description -->
-            <div id="front_end_wrapper" class="col-10 m-0 p-0 my-5 mx-auto d-flex flex-column flex-rounded wrap border bg-light">
-                
+            <div id="front_end_wrapper"
+                class="col-10 m-0 p-0 my-5 mx-auto d-flex flex-column flex-rounded wrap border bg-light">
+
                 <!-- SHERLOCK DIV -->
                 <div class="sherlock-wrapper">
                     <div class="sherlock">
                         <div class="sherlock_eyes"></div>
                         <div class="sherlock_eyes"></div>
-                    </div>                    
+                    </div>
                 </div>
 
-                <h3 class="col-12 m-0 p-0 mx-auto py-2 bg-dark text-center text-white border rounded">Front End Tools</h3>
+                <h3 class="col-12 m-0 p-0 mx-auto py-2 bg-dark text-center text-white border rounded">Front End Tools
+                </h3>
 
                 <!-- HTML, CSS, JS, jQuery -->
                 <div id="" class="div_tool_kit_images m-0 p-0 d-flex flex-row flex-wrap">
@@ -119,7 +127,8 @@
 
             <!--Starts here -  Back End Tool Kit Description -->
             <div id="back_end_wrapper" class="col-10 m-0 p-0 my-5 mx-auto d-flex flex-column border rounded bg-light">
-                <h3 class="col-12 m-0 p-0 mx-auto py-2 bg-dark text-center text-white border rounded">Bank End Tools</h3>
+                <h3 class="col-12 m-0 p-0 mx-auto py-2 bg-dark text-center text-white border rounded">Back End Tools
+                </h3>
 
                 <div id=""
                     class="div_tool_kit_images col-12 m-0 p-0 d-flex flex-row align-items-center justify-content-around">
@@ -137,7 +146,8 @@
 
             <!--Starts here -  Version Control Tool Kit Description -->
             <div id="back_end_wrapper" class="col-10 m-0 p-0 my-5 mx-auto d-flex flex-column border rounded bg-light">
-                <h3 class="col-12 m-0 p-0 mx-auto py-2 bg-dark text-center text-white border rounded">Version Control</h3>
+                <h3 class="col-12 m-0 p-0 mx-auto py-2 bg-dark text-center text-white border rounded">Version Control
+                </h3>
 
                 <div id=""
                     class="div_tool_kit_images col-12 m-0 p-0 d-flex flex-row align-items-center justify-content-around">
@@ -151,7 +161,7 @@
                     </div>
                 </div>
             </div>
-            <!--Ends here -  Version Contorl Tool Kit Description -->            
+            <!--Ends here -  Version Contorl Tool Kit Description -->
 
             <!-- Starts here - CMS section -->
             <div id="back_end_wrapper" class="col-10 m-0 p-0 my-5 mx-auto d-flex flex-column border rounded bg-light">
@@ -169,7 +179,8 @@
 
             <!--Starts here -  Data Structures Description -->
             <div id="back_end_wrapper" class="col-10 m-0 p-0 my-5 mx-auto d-flex flex-column border rounded bg-light">
-                <h3 class="col-12 m-0 p-0 mx-auto py-2 bg-dark text-center text-white border rounded">Data Structures</h3>
+                <h3 class="col-12 m-0 p-0 mx-auto py-2 bg-dark text-center text-white border rounded">Data Structures
+                </h3>
                 <div class="col-12">
                     <ul class="row m-0 p-0">
                         <li class="m-2 p-2 border-bottom border-right rounded">Arrays</li>
@@ -194,33 +205,42 @@
                 <img src="./Assets/Images/coffee_vector.png" height="50px" alt="">
             </div>
 
-            <form class="col-10 my-4 p-4 mx-auto border border-dark rounded bg-light">
+            <form id="contact_me_form" class="col-10 my-4 p-4 mx-auto border border-dark rounded bg-light">
                 <div class="form-group">
                     <label for="exampleInputName">Name</label>
-                    <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp"
-                        placeholder="Enter Name">
+                    <input value="hello_hi_there" type="text" name="name" class="form-control" id="exampleInputName"
+                        aria-describedby="emailHelp" placeholder="Enter Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="Enter Email">
+                    <input value="hello_hi_there" type="email" name="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter Email">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="btn_contact_form" class="btn btn-primary">Submit</button>
             </form>
         </section>
-
-
     </main>
 
-
-
+    <script src="./firebase_config.js"></script>
 </body>
 <script src="./Libraries/jquery-3.4.1.js"></script>
 <script src="./Libraries/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
 <script src="./app3.js"></script>
+
+<!-- <script src="./firebase-messaging-config.js"></script> -->
+<!-- <script src="./firebase-messaging-sw.js"></script> -->
+<!-- 
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/service-worker.js');
+            console.log('Service worker registered');
+        });
+    }
+</script> -->
 
 </html>
