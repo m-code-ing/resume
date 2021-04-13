@@ -13,7 +13,7 @@
     <!-- Firebase Messaging CDN -->
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
     <!-- For an optimal experience using Cloud Messaging, also add the Firebase SDK for Analytics. -->
-    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script> -->
 </head>
 
 <body class="mt-5">
@@ -133,6 +133,21 @@
                 <div id=""
                     class="div_tool_kit_images col-12 m-0 p-0 d-flex flex-row align-items-center justify-content-around">
                     <div class="col- m-0 p-2 d-flex flex-column align-items-center justify-content-center border">
+                        <img src="./Assets/Images/nodejs.png" class="d-block toolkit_logos" alt="">
+                        <p>NodeJs</p>
+                    </div>
+                    <div class="col- m-0 p-2 d-flex flex-column align-items-center justify-content-center border">
+                        <img src="./Assets/Images/expressjs_logo.png" class="d-block toolkit_logos" alt="">
+                        <p>Express Js</p>
+                    </div>
+                    <div class="col- m-0 p-2 d-flex flex-column align-items-center justify-content-center border">
+                        <img src="./Assets/Images/mongodb_logo.png" class="d-block toolkit_logos" alt="">
+                        <p>Mongo DB</p>
+                    </div>
+                </div>
+                <div id=""
+                    class="div_tool_kit_images col-12 m-0 p-0 d-flex flex-row align-items-center justify-content-around">
+                    <div class="col- m-0 p-2 d-flex flex-column align-items-center justify-content-center border">
                         <img src="./Assets/Images/php_logo.png" class="d-block toolkit_logos" alt="">
                         <p>PHP</p>
                     </div>
@@ -224,23 +239,21 @@
             </form>
         </section>
     </main>
-
-    <script src="./firebase_config.js"></script>
 </body>
 <script src="./Libraries/jquery-3.4.1.js"></script>
 <script src="./Libraries/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
 <script src="./app3.js"></script>
-
-<!-- <script src="./firebase-messaging-config.js"></script> -->
-<!-- <script src="./firebase-messaging-sw.js"></script> -->
-<!-- 
+<script src="./firebase_config.js"></script>
+<script src="./firebase-messaging-sw.js"></script>
 <script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-            navigator.serviceWorker.register('/service-worker.js');
-            console.log('Service worker registered');
-        });
-    }
-</script> -->
+    // Handle incoming messages. Called when:
+    // - a message is received while the app has focus
+    // - the user clicks on an app notification created by a service worker
+    //   `messaging.onBackgroundMessage` handler.
+    messaging.onMessage((payload) => {
+        console.log('Message received. ', payload);
+        // ...
+    });
+</script>
 
 </html>

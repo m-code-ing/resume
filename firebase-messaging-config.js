@@ -20,21 +20,3 @@ messaging.getToken({ vapidKey: '<YOUR_PUBLIC_VAPID_KEY_HERE>' }).then((currentTo
 
 
 //   the below code if from tutorial.
-
-// const messaging = firebase.messaging();
-// messaging
-//     .requestPermission()
-//     .then(function () {
-//         MsgElem.innerHTML = "Notification permission granted."
-//         console.log("Notification permission granted.");
-
-//         // get the token in the form of promise
-//         return messaging.getToken()
-//     })
-//     .then(function (token) {
-//         TokenElem.innerHTML = "token is : " + token
-//     })
-//     .catch(function (err) {
-//         ErrElem.innerHTML = ErrElem.innerHTML + "; " + err
-//         console.log("Unable to get permission to notify.", err);
-//     });
