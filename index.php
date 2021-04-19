@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +54,10 @@
                 <p class="my-2 p-0">Interested to join a team of developers where I can be a contributing
                     memeber as well as advance my career as a web developer.</p>
                 <div class="col-12 row m-0 p-0">
-                    <p class="col-12 m-0 p-0">I am proficient with basics (HTML/CSS, JavaScript, jQuery, BootStrap) as well as Frameworks/Libraries such as Reactjs (with Redux, Redux thunk), Angular, Node js + Express js and Databases such as MySQL and MongoDB.  I have good knowledge of Front-end as well as Back-end and able to delivery production ready projects.</p>
+                    <p class="col-12 m-0 p-0">I am proficient with basics (HTML/CSS, JavaScript, jQuery, BootStrap) as
+                        well as Frameworks/Libraries such as Reactjs (with Redux, Redux thunk), Angular, Node js +
+                        Express js and Databases such as MySQL and MongoDB. I have good knowledge of Front-end as well
+                        as Back-end and able to delivery production ready projects.</p>
                 </div>
             </div>
             <!-- </div> -->
@@ -216,20 +223,27 @@
                 <img src="./Assets/Images/coffee_vector.png" height="50px" alt="">
             </div>
 
-            <form id="contact_me_form" class="col-10 my-4 p-4 mx-auto border border-dark rounded bg-light">
+            <?php 
+                if ($_SESSION['mailConfirmation']) {
+                    echo "<script>alert('Thank you for your Message. I will get back to you soon!');</script>";
+                    $_SESSION['mailConfirmation'] = false;
+                }
+            ?>
+            <form id="contact_me_form" class="col-10 my-4 p-4 mx-auto border border-dark rounded bg-light"
+                name="contact_me_form" action="./mail.php" method="POST">
                 <div class="form-group">
-                    <label for="exampleInputName">Name</label>
-                    <input value="hello_hi_there" type="text" name="name" class="form-control" id="exampleInputName"
-                        aria-describedby="emailHelp" placeholder="Enter Name">
+                    <label for="Name">Name</label>
+                    <input value="" type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp"
+                        placeholder="Enter Name">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input value="hello_hi_there" type="email" name="email" class="form-control" id="exampleInputEmail1"
+                    <label for="Email">Email address</label>
+                    <input value="" type="email" name="email" class="form-control" id="email"
                         aria-describedby="emailHelp" placeholder="Enter Email">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Message</label>
-                    <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="Message">Message</label>
+                    <textarea name="message" class="form-control" id="message" rows="3"></textarea>
                 </div>
                 <button type="submit" id="btn_contact_form" class="btn btn-primary">Submit</button>
             </form>
